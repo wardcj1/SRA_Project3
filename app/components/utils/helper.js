@@ -1,7 +1,10 @@
 // Include the axios package for performing HTTP requests (promise based alternative to request)
 import axios from "axios";
 
-// Geocoder API
+// Change to make call to API that does Ticker symbol lookup
+
+
+
 const nytSearchAPI = "3d6446c5bbce42a68429fb02c8ad0975";
 
 // Helper Functions (in this case the only one is runQuery)

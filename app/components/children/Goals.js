@@ -28,11 +28,23 @@ const iGoals = [{
   }
 ];
 
+// create buttons for the iType selection panel
+var iTypeList = React.createClass {
+// const iTypes = props.iTypes;
+  const listItems = iTypes.map((desc) =>
+    render: function() { 
+    <li>{iTypes.desc}</li>
+    <Button>{iTypes.summary}</Button>
+  });
+  return {listItems};
+};
+
 // create buttons for the iGoal selection panel
-function iTypeList(props) {
-  const iGoals = props.iGoals;
+function iGoalList(props) {
+//  const iGoals = props.iGoals;
   const listItems = iGoals.map((desc) =>
-    <Button>{number}</Button>
+    <li>{iGoals.desc[]}</li>
+    <Button>{iGoals.type[]}</Button>
   );
   return {listItems};
 };
@@ -49,6 +61,7 @@ class Goals extends React.Component {
 
   handleChange: function(event) {
     //update selection within clicked panel
+    //make sure hilite is on selected item
     var newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
@@ -66,17 +79,20 @@ class Goals extends React.Component {
           <br>
           <Panel heading="<em>How do you feel about investments?</em>">
             <Col xs={12} sm={12} md={6} />
+            <ul>
             <ButtonGroup vertical block>
   // create 3 buttons using JSON text
-              <Button>Full width button</Button>
-            />
+              {this.iTypeList()}
+            </ul>
           </Panel>
           <Panel heading="<em>My Primary Investment need is:</em>">
             <Col xs={12} sm={12} md={6} />
+            <ul>
             <ButtonGroup vertical block>
   // create 3 buttons using JSON text
-              <Button>Full width button</Button>
+              {this.iGoalList()}
             />
+            </ul>
           </Panel>
           <Button type="submit" className="btn btn-primary" onClick={doCommit()}>
               Submit
