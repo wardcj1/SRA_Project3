@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.Hwelcome {
+    color: gray;
+    font-family: ;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.subHeader {
+    color: darkslategray;
+    font-family: ;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.subHeader2 {
+    color: firebrick;
+    font-family: ;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    /* Location on page */
+    bottom: 0;
+    background-color: white;
+    margin-left: 30%;
+    margin-bottom: 40px;
+    width: 40%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    border-radius: 3px;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: hand; cursor: pointer;
+}
+
+.modal-header {
+    background-color: dimgray;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategray;
+    padding: 10px 16px;
+}
+
+.modal-body {
+	padding: 20px 16px;
+}
+
+.modal-footer {
+    padding: 10px 16px;
+    background-color: dimgray;
+    color: white;
+}
+
+.submitBtn {
+	cursor: hand; cursor: pointer;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: red;
+    height: 27px;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    border-color: darkgray;
+}
+
+.profile-section {
+    width: 50%;
+    margin-left: 45%;
+    margin-right: 5%;
+}
+
+.profileQ {
+    color: darkslategray;
+    font-family: ;
+    font-size: 18px;
+}
+
+.profileQ:hover, .profileQ.active {
+    cursor: hand; cursor: pointer;
+    background-color: red;
+    color: white;
+    border-color: darkgray;  
+}
+
+.profileQ2 {
+    color: black;
+    font-family: ;
+    font-size: 20px;
+    border-color: darkslategray;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    width: 40%;
+    height: 140px;
+}
+
+.profileQ2:hover {
+    cursor: hand; cursor: pointer;
+    background-color: gray;
+    color: white;
+    border-color: red;  
+}
+
+#myBtn {
+    margin-left: 90%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#submitUser {
+	margin-left: 70%;
+}
+
+#login {
+    cursor: hand; cursor: pointer;
+    margin-left: 25%;
+}
+
+.search-body {
+    margin-left: 70%;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+</style>
+</head>
+<body>
+
+<img src="logo.png">
+
+<img src="clientBtn.jpg" id="login"><br>
+
+<hr>
+
+    <div class="search-body">
+      <form>
+            <img src="search.jpg" style="width: 15px;height: 15px;">
+            <input type="text" name="companyinfo" size="30" placeholder="Search for Company or Ticker">
+            <input type="submit" class="submitBtn" id="searchSubmit">
+      </form>
+    </div>
+
+<hr>
+
+<div class="page2-header">
+   <div class="row"> 
+    <center><p class="Hwelcome">Thank you for stopping by, what are you seeking to accomplish today?
+    </p></center>
+   </div>
+   <div class="row"> 
+    <div class="col-md-6">
+        <div class="subHeader">How do you feel about investments?</div>
+        <div class="subHeader2">Self Directed
+            <div class="profileQ2">
+            <ul><li>Stronger than my peers, but I’m here to see what you offer. I’m skeptical about “professionals.”</li></ul></div>
+        </div>
+        <div class="subHeader2">Validator
+            <div class="profileQ2">
+            <ul><li>I feel good about what I’m doing and want to maintain control. I would like someone on occasion to validate my holdings.</li></ul></div>
+        </div>
+        <div class="subHeader2">Delegator
+            <div class="profileQ2">
+            <ul><li>I don’t have the time or possibly the confidence to manage everything by myself. I would prefer to delegate some responsibilities to professionals.</li></ul></div>
+        </div>    
+    </div>
+    <div class="col-md-6">
+        <div class="subHeader">My Primary Investment Need is:</div>
+        <div class="subHeader2">Growth
+            <div class="profileQ2">
+                <ul>
+                <li>To grow capital</li>
+                <li>Possible need:</li>
+                    <ul>
+                    <li>Fund an early retirement</li>
+                    <li>Finance a child or grandchild’s education</li>
+                    </ul>
+                </ul>    
+            </div>
+        </div>
+        <div class="subHeader2">Income
+            <div class="profileQ2">
+                <ul>
+                <li>To increase current income</li>
+                <li>Possible need:</li>
+                    <ul>
+                    <li>Preserving Capital</li>
+                    <li>Supplemental Retirement Spending</li>
+                    </ul>
+                </ul> 
+            </div>
+        </div>
+        <div class="subHeader2">Tax Savings
+            <div class="profileQ2">
+                <ul>
+                <li>To reduce taxes</li>
+                <li>Possible need:</li>
+                    <ul>
+                    <li>Ideas that produce tax-free income</li>
+                    <li>Ideas that produce tax-deferred income (pay taxes at a later date)</li>
+                    </ul>
+                </ul> 
+            </div>
+        </div>          
+    </div>
+   </div>
+</div>
+
+<hr>
+
+<div class="profile-section">
+<strong>Which best describes your investment objective?</strong><br>
+<div class="profileQ">Current income is my primary objective with capital appreciation being secondary.</div>
+<div class="profileQ">Capital appreciation is my primary objective with current income being secondary.</div>
+<div class="profileQ">Capital appreciation is my only objective.</div>
+<br>
+<strong>How important is it for your portfolio to generate income today?</strong><br>
+<div class="profileQ">Very important – I will use current income from the portfolio to meet current expenses.</div>
+<div class="profileQ">Somewhat important – Distributions from this portfolio will help in meeting current expenses.</div>
+<div class="profileQ">Not important – Current income is not a consideration.</div>
+<br>
+<strong>When is the earliest that you anticipate needing all or a substantial portion of your investable assets?</strong><br>
+<div class="profileQ">0-5 years.</div>
+<div class="profileQ">6-10 years.</div>
+<div class="profileQ">11-15 years.</div>
+<div class="profileQ">Over 15 years.</div>
+<br>
+<strong>What is your age range?</strong><br>
+<div class="profileQ">Over 75.</div>
+<div class="profileQ">65-74.</div>
+<div class="profileQ">55-64.</div>
+<div class="profileQ">40-54.</div>
+<div class="profileQ">Under 40.</div>
+<br>
+<strong>How willing are you to accept fluctuations in the value of your portfolio?</strong><br>
+<div class="profileQ">Fluctuation in principal is a key concern.</div>
+<div class="profileQ">Fluctuation in principal is a moderate concern.</div>
+<div class="profileQ">Fluctuation in principal is a minor concern.</div>
+<div class="profileQ">Fluctuation in principal is of no concern.</div>
+<br>
+<strong>How important is it to you to be able to liquidate part or all of your portfolio with little loss of your investments?</strong><br>
+<div class="profileQ">Very important.</div>
+<div class="profileQ">Moderately important.</div>
+<div class="profileQ">Not important.</div>
+<br>
+<strong>Short-term volatility in financial markets may cause portfolios to decline in value. How willing are you to accept short-term losses?</strong><br>
+<div class="profileQ">I am unwilling to accept more than a small, temporary loss in portfolio value.</div>
+<div class="profileQ">I am willing to accept short-term losses, but not as much as the loss in the broad equity market.</div>
+<div class="profileQ">I am willing to accept short-term losses in line with the broad equity market.</div>
+<div class="profileQ">I am willing to accept higher than market short-term losses as part of a strategy to achieve higher than long-term market returns.</div>
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="submitBtn">Submit</button>
+<!--       <form>
+            <input type="text" name="" class="profileQ" placeholder="">
+            <input type="submit" class="submitBtn" id="myBtn">
+      </form> -->
+
+
+<hr>
+
+<h2>Looking back over the past 10-20 years, if you could have avoided your biggest financial mistakes, how much better off would you be now?</h2>
+
+<img src="mktTiming.jpg" width="100%">
+
+<hr>
+
+<img src="assetclassreturns.png" width="100%">
+
+<hr>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      Please create
+    </div>
+    <div class="modal-body">
+      <form>
+  			Username (email address):<br>
+ 		    <img src="email.jpg">
+            <input type="text" name="username" size="30"><br><br>
+            Password:<br>
+            <img src="lock.jpg" style="width:px;height:px;">
+            <input type="text" name="password" size="30">
+	  </form>
+    </div>
+    <div class="modal-footer">
+      <input type="submit" class="submitBtn" id="submitUser">
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+jQuery('profileQ').click(function(){
+   jQuery(this).toggleClass('active');
+});
+
+</script>
+
+</body>
+</html>
