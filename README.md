@@ -1,6 +1,6 @@
 # SRA_Project3
 
-![ScreenShot](icebox/mkttiming.jpg)
+![ScreenShot](/icebox/mktTiming.jpg)
 
 ## Live Link
  - https://
