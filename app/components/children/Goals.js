@@ -1,17 +1,6 @@
 import React from "react";
 import { Button Panel ButtonGroup Col } from "react-bootstrap";
-
-const iTypes = [{
-  desc: 'Self Directed',
-  summary: 'Stronger than my peers, but I'm here to see what you offer.  I'm skeptical about "professionals".' 
-  }, {
-  desc: 'Validator',
-  summary: "I feel good about what I'm doing and want to maintain control.  I would like someone on occasion to validate my holdings."
-  }, {
-  desc: 'Delegator',
-  summary: "I don't have the time, or possibly the confidence, to manage everything by myself.  I would prefer to delegate some responsibilities to professionals."
-  }
-];
+import TypeGrid from ('/grandchildren/TypeGrid.js');
 
 const iGoals = [{
     desc: 'Growth',
@@ -27,17 +16,6 @@ const iGoals = [{
     needs: ["Ideas that produce tax-free income", "Ideas that produce tax-deferred income (pay taxes at a later date)"]
   }
 ];
-
-// create buttons for the iType selection panel
-var iTypeList = React.createClass {
-// const iTypes = props.iTypes;
-  const listItems = iTypes.map((desc) =>
-    render: function() { 
-    <li>{iTypes.desc}</li>
-    <Button>{iTypes.summary}</Button>
-  });
-  return {listItems};
-};
 
 // create buttons for the iGoal selection panel
 function iGoalList(props) {
@@ -68,7 +46,7 @@ class Goals extends React.Component {
   }
 
   doCommit: function() {
-    // commit selections to storage
+    // commit selections to storage upon SUBMIT
     // trigger next page
   }
 
@@ -81,8 +59,7 @@ class Goals extends React.Component {
             <Col xs={12} sm={12} md={6} />
             <ul>
             <ButtonGroup vertical block>
-  // create 3 buttons using JSON text
-              {this.iTypeList()}
+              {TypeGrid}
             </ul>
           </Panel>
           <Panel heading="<em>My Primary Investment need is:</em>">
