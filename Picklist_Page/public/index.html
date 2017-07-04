@@ -6,48 +6,49 @@
     <style>
       #wrapper {
         width: 100%;
-        padding-top: 30px;
-        margin-left: auto;
-        margin-right: auto;
+        padding-top: ;
+        margin-left: 50px;
         text-align: center;
+        font-family: georgia;
+        color: rgb(203,0,0);
       }
 
       #portfolio {
-        width: 40%;
+        float: left;
+        width: 500px;
+        height: 800px;
         margin-left: 20px;
         background-color: white;
         border-style: solid;
-        border-color: red;
+        border-color: rgb(203,0,0);
         border-width: 2px;
+        border-radius: 50px;
       }
 
       #watchlist {
-        width: 55%;
-        margin-left: 20px;
-        margin-right: 20px;
+        float: right;
+        width: 50%;
+        margin-left: 5%;
+        margin-right: 5%;
         background-color: white;
         border-style: solid;
         border-color: blue;
         border-width: 2px;
       }
-
-      #watchlist { 
-        float: right; 
-      }
-
-      #portfolio { 
-        float: left; 
-      }
-
-      table, td {
-        border-width: 1px;
-        border-style: solid;
-        border-color: black;
-      }
-      
+   
       body {
-        font-family: sans-serif;
+        font-family: georgia, arial, sans-serif;
+        color: rgb(44,44,44);
         background-color: white;
+      }
+
+      .tiles {
+        position:relative;
+        margin-top: 5px;
+        margin-left: 3px;
+        border-width: ;
+        border-style: ;
+        border-color: ;
       }
 
       #results { 
@@ -59,22 +60,25 @@
       }
       
       input {
-        width: 50%;
         height: 36px;
         font-size: 24px;
       }
     </style>
   </head>
   <body>
+
+
     <div id="wrapper">
       <h1>Smart Robo Investments</h1>
+     
       <form id="userinput">
-          <input type="text" id="company" placeholder="Company"/>
-        <br />
-          <input type="text" id="ticker" placeholder="Ticker Symbol"/>
-        <br />
-        <button type="submit" id="addstock">Search</button>
+          <input type="text" id="company" placeholder="Company" style="width: 300px">
+          <input type="text" id="ticker" placeholder="Symbol" style="width: 100px"maxlength="5" size="5">
+          <button type="submit" id="addstock">Search</button>
       </form>
+    </div>
+
+    
       <div id="results">
         <table id="portfolio">
         </table>
@@ -83,7 +87,6 @@
         <table id="watchlist">
         </table>
       </div>
-    </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="app.js"></script>
   </body>
