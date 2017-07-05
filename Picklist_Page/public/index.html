@@ -3,87 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <title>Smart Robo Investments</title>
-    <style>
-      #wrapper {
-        width: 100%;
-        padding-top: ;
-        margin-left: 50px;
-        text-align: center;
-        font-family: georgia;
-        color: rgb(203,0,0);
-      }
-
-      #portfolio {
-        float: left;
-        width: 500px;
-        height: 800px;
-        margin-left: 20px;
-        background-color: white;
-        border-style: solid;
-        border-color: rgb(203,0,0);
-        border-width: 2px;
-        border-radius: 50px;
-      }
-
-      #watchlist {
-        float: right;
-        width: 50%;
-        margin-left: 5%;
-        margin-right: 5%;
-        background-color: white;
-        border-style: solid;
-        border-color: blue;
-        border-width: 2px;
-      }
-   
-      body {
-        font-family: georgia, arial, sans-serif;
-        color: rgb(44,44,44);
-        background-color: white;
-      }
-
-      .tiles {
-        position:relative;
-        margin-top: 5px;
-        margin-left: 3px;
-        border-width: ;
-        border-style: ;
-        border-color: ;
-      }
-
-      #results { 
-        margin-top: 50px; 
-      }
-
-      #userinput { 
-        font-size: 24px; 
-      }
-      
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-    </style>
+      <!-- Latest compiled and minified CSS -->
+<!--       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"> -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
 
 
     <div id="wrapper">
-      <h1>Smart Robo Investments</h1>
-     
-      <form id="userinput">
+      <form class="form-inline" id="userinput">
+          <label class="header">Smart Robo Investments</label>
           <input type="text" id="company" placeholder="Company" style="width: 300px">
-          <input type="text" id="ticker" placeholder="Symbol" style="width: 100px"maxlength="5" size="5">
-          <button type="submit" id="addstock">Search</button>
+          <input type="text" id="ticker" placeholder="Symbol" style="width: 100px" maxlength="5" size="5">
+          <button type="submit" id="addstock" class="btn btn-primary">Search</button>
       </form>
     </div>
 
     
-      <div id="results">
+      <div class="results">
         <table id="portfolio">
         </table>
       </div>
-      <div id="results">
+      <div class="results">
         <table id="watchlist">
         </table>
       </div>
