@@ -1,31 +1,7 @@
 import React from "react";
-import { Button Panel ButtonGroup Col } from "react-bootstrap";
-import TypeGrid from ('/grandchildren/TypeGrid.js');
-
-const iGoals = [{
-    desc: 'Growth',
-    type: 'To grow capital', 
-    needs: ["Fund an early retirement", "Finance a child or grandchild's education"]
-  }, {
-    desc: 'Income',
-    type: 'To increase current income',
-    needs: ["Preserving Capital", "Supplemental Retirement Spending"]  
-  }, {
-    desc: 'Tax Savings',
-    type: 'To reduce taxes',
-    needs: ["Ideas that produce tax-free income", "Ideas that produce tax-deferred income (pay taxes at a later date)"]
-  }
-];
-
-// create buttons for the iGoal selection panel
-function iGoalList(props) {
-//  const iGoals = props.iGoals;
-  const listItems = iGoals.map((desc) =>
-    <li>{iGoals.desc[]}</li>
-    <Button>{iGoals.type[]}</Button>
-  );
-  return {listItems};
-};
+import { Button } from "react-bootstrap";
+import ListItems from './grandchildren/ListItems.js';
+import GoalList from './grandchildren/GoalList.js';
 
 class Goals extends React.Component {
 
@@ -37,7 +13,7 @@ class Goals extends React.Component {
     }
   }
 
-  handleChange: function(event) {
+  handleChange(event) {
     //update selection within clicked panel
     //make sure hilite is on selected item
     var newState = {};
@@ -45,7 +21,11 @@ class Goals extends React.Component {
     this.setState(newState);
   }
 
-  doCommit: function() {
+  doCommit() {
+    //if this.state.investorType && this.state.investorGoal {
+      console.log(this.state.investorType)
+      console.log(this.state.investorGoal)
+    //}
     // commit selections to storage upon SUBMIT
     // trigger next page
   }
@@ -55,27 +35,19 @@ class Goals extends React.Component {
         <div>
           <h3>Thank you for stopping by.  What are you seeking to accomplish today?</h3>
           <br>
-          <Panel heading="<em>How do you feel about investments?</em>">
-            <Col xs={12} sm={12} md={6} />
-            <ul>
-            <ButtonGroup vertical block>
-              {TypeGrid}
-            </ul>
+          <Panel heading='How do you feel about investments?'>
+            <Col xs={12} sm={12} md={6}></Col>
+              <ListItems />
           </Panel>
-          <Panel heading="<em>My Primary Investment need is:</em>">
-            <Col xs={12} sm={12} md={6} />
-            <ul>
-            <ButtonGroup vertical block>
-  // create 3 buttons using JSON text
-              {this.iGoalList()}
-            />
-            </ul>
+          <Panel heading='My Primary Investment need is:'>
+            <Col xs={12} sm={12} md={6}></Col>
+              <GoalList />
           </Panel>
           <Button type="submit" className="btn btn-primary" onClick={doCommit()}>
               Submit
           </Button>
         </div>  
-    );
+    )
   },
 }
 

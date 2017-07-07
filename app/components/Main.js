@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // Import sub-components
-var Goals = require("./components/Goals");
+import Goals from "./children/Goals";
 
 class Main extends React.Component {
   // intialize state
@@ -21,7 +21,7 @@ class Main extends React.Component {
     });
   }
 
-  render: function() {
+  render() {
 
     return (
 
@@ -32,12 +32,13 @@ class Main extends React.Component {
           </div>
         </div>  
         <div className="col-md-12">
-          <Goals propName = {propValue} />
+          <Goals />
         </div>
       </div>
       
     );
   }
+
 }
 
 // Export the component back for use in other files
