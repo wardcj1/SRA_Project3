@@ -25,11 +25,11 @@ class ListItems extends React.Component {
 		return(
 			<div>
 			  <select name={this.state.investorType}>
-			  	<option value=iTypes.desc[0]>{iTypes.desc[0]}</option>
+			  	<option value={iTypes.desc[0]}>{iTypes.desc[0]}</option>
 			  	<p>{iTypes.summary[0]}</p>
-				<option value=iTypes.desc[1]>{iTypes.desc[1]}</option>
+				<option value={iTypes.desc[1]}>{iTypes.desc[1]}</option>
 				<p>{iTypes.summary[1]}</p>
-			  	<option value=iTypes.desc[2]>{iTypes.desc[2]}</option>
+			  	<option value={iTypes.desc[2]}>{iTypes.desc[2]}</option>
 			  	<p>{iTypes.summary[2]}</p>
 			  </select>	
 			</div>

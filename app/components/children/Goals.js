@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Panel, Button, Col } from "react-bootstrap";
 import ListItems from './grandchildren/ListItems.js';
 import GoalList from './grandchildren/GoalList.js';
 
@@ -33,23 +33,30 @@ class Goals extends React.Component {
   render() {
     return (
         <div>
+
           <h3>Thank you for stopping by.  What are you seeking to accomplish today?</h3>
-          <br>
-          <Panel heading='How do you feel about investments?'>
-            <Col xs={12} sm={12} md={6}></Col>
+          <br />
+
+          <Col xs={12} sm={12} md={6}>
+            <Panel heading='How do you feel about investments?'>
               <ListItems />
-          </Panel>
-          <Panel heading='My Primary Investment need is:'>
-            <Col xs={12} sm={12} md={6}></Col>
+            </Panel>
+          </Col>  
+
+          <Col xs={12} sm={12} md={6}>
+            <Panel heading='My Primary Investment need is:'>
               <GoalList />
-          </Panel>
+            </Panel>
+          </Col>  
+
           <Button type="submit" className="btn btn-primary" onClick={doCommit()}>
               Submit
           </Button>
+
         </div>  
     )
-  },
-}
+  }
+};
 
 // Export the component back for use in other files
 export default Goals;

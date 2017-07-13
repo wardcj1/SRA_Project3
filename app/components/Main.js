@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Col } from "react-bootstrap";
+
 
 // Import sub-components
-import Goals from "./children/Goals";
+//import Goals from "./children/Goals";
+import Home from "./children/Home";
 
 class Main extends React.Component {
-  // intialize state
-  constructor(props) {
 
-    super(props);
-    this.state = {
-
-    }
-
+  componentDidMount(){
+    console.log('MAIN RENDER');
   }
 
   setTerm(term) {
@@ -31,8 +29,10 @@ class Main extends React.Component {
             <h1 className="text-center">Smart Robo Investments</h1>
           </div>
         </div>  
-        <div className="col-md-12">
-          <Goals />
+        <div>
+          <Col xs={12} sm={12} md={12}>
+            <Home />
+          </Col>
         </div>
       </div>
       

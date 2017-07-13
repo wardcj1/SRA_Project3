@@ -28,7 +28,7 @@ class GoalList extends React.Component {
 		return(
 			<div>
 			  <select name={this.state.investorGoal}>
-			  	<option value=iGoals.desc[0]>{iGoals.desc[0]}</option>
+			  	<option value={iGoals.desc[0]}>{iGoals.desc[0]}</option>
 			  	  <ul>
 			  	    <li>{iGoals.type[0]}</li>
 			  	    <ul>
@@ -36,7 +36,7 @@ class GoalList extends React.Component {
 			  	      <li>{iGoals.needs[0, 1]}</li>
 			  	    </ul>
 			  	  </ul>    
-				<option value=iGoals.desc[1]>{iGoals.desc[1]}</option>
+				<option value={iGoals.desc[1]}>{iGoals.desc[1]}</option>
 				    <ul>
               <li>{iGoals.type[1]}</li>
               <ul>
@@ -44,7 +44,7 @@ class GoalList extends React.Component {
                 <li>{iGoals.needs[1, 1]}</li>
               </ul>
             </ul>
-			  	<option value=iGoals.desc[2]>{iGoals.desc[2]}</option>
+			  	<option value={iGoals.desc[2]}>{iGoals.desc[2]}</option>
 			  	  <ul>
               <li>{iGoals.type[2]}</li>
               <ul>
