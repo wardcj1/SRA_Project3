@@ -1,5 +1,5 @@
 import React from "react";
-import { Panel, Button, Col } from "react-bootstrap";
+import { Panel, Button, Col, Row, Jumbotron } from "react-bootstrap";
 import {ListItems} from "./ListItems";
 import {GoalList} from "./GoalList";
 
@@ -33,26 +33,36 @@ export class Goals extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className="container">
 
-          <h3>Thank you for stopping by.  What are you seeking to accomplish today?</h3>
+          <div>
+          <Row>
+            <Jumbotron>
+              <h1 className="text-center">Smart Robo Investments</h1>
+            </Jumbotron>
+          </Row>  
+          </div>
+
+          <h3>Please select the 2 options that most closely describe you and press Submit.</h3>
           <br />
 
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={10} xsOffset={1} sm={10} smOffset={1} md={5} mdOffset={1}>
             <Panel heading='How do you feel about investments?'>
               <ListItems />
             </Panel>
           </Col>  
 
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={10} xsOffset={1} sm={10} smOffset={1} md={5}>
             <Panel heading='My Primary Investment need is:'>
               <GoalList />
             </Panel>
           </Col>  
 
-          <Button type="submit" className="btn btn-primary" onClick={this.doCommit()}>
+          <Col xs={4} xsOffset={4} sm={4} smOffset={4} md={4} mdOffset={4}>
+            <Button type="submit" className="btn btn-primary" bsSize="large" block onClick={this.doCommit()}>
               Submit
-          </Button>
+            </Button>
+          </Col>
 
         </div>  
     )

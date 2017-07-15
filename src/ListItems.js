@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import { CardStack, Card } from 'react-cardstack';
+
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
 
 const iTypes = [{
@@ -28,14 +30,28 @@ export class ListItems extends React.Component {
 	render() {
 		return(
 			<div>
-			  <select name={this.state.investorType}>
-			  	<option value={iTypes.desc[0]}>{iTypes.desc[0]}</option>
-			  	<p>{iTypes.summary[0]}</p>
-				<option value={iTypes.desc[1]}>{iTypes.desc[1]}</option>
-				<p>{iTypes.summary[1]}</p>
-			  	<option value={iTypes.desc[2]}>{iTypes.desc[2]}</option>
-			  	<p>{iTypes.summary[2]}</p>
-			  </select>	
+				<CardStack
+					height={300}
+					width={412}
+					background='#f8f8f8'
+					hoverOffset={25}>
+
+					<Card background='#30b8f2'>
+						<h1>{iTypes[0].desc}</h1>
+						<p>{iTypes[0].summary}</p>
+					</Card>
+
+					<Card background='#6ded75'>
+						<h1>{iTypes[1].desc}</h1>
+						<p>{iTypes[1].summary}</p>
+					</Card>
+
+					<Card background='#7c9ed6'>
+						<h1>{iTypes[2].desc}</h1>
+						<p>{iTypes[2].summary}</p>
+					</Card>
+
+				</CardStack>
 			</div>
 		)
 	}
@@ -43,3 +59,12 @@ export class ListItems extends React.Component {
 
 // Export the component back for use in other files
 export default ListItems;
+
+//			  <select name={this.state.investorType}>
+//			  	<option value={iTypes[0].desc}>{iTypes[0].desc}</option>
+//			  	<p>{iTypes[0].summary}</p>
+//				<option value={iTypes[1].desc}>{iTypes[1].desc}</option>
+//				<p>{iTypes[1].summary}</p>
+//			  	<option value={iTypes[2].desc}>{iTypes[2].desc}</option>
+//			  	<p>{iTypes[2].summary}</p>
+//			  </select>	

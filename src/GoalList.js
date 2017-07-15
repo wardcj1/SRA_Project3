@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import { CardStack, Card } from 'react-cardstack';
+
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
 
 const iGoals = [{
@@ -27,32 +29,47 @@ export class GoalList extends React.Component {
 	render() {
 		return(
 			<div>
-			  <select name={this.state.investorGoal}>
-			  	<option value={iGoals.desc[0]}>{iGoals.desc[0]}</option>
-			  	  <ul>
-			  	    <li>{iGoals.type[0]}</li>
-			  	    <ul>
-			  	      <li>{iGoals.needs[0, 0]}</li>
-			  	      <li>{iGoals.needs[0, 1]}</li>
-			  	    </ul>
-			  	  </ul>    
-				<option value={iGoals.desc[1]}>{iGoals.desc[1]}</option>
-				    <ul>
-              <li>{iGoals.type[1]}</li>
-              <ul>
-                <li>{iGoals.needs[1, 0]}</li>
-                <li>{iGoals.needs[1, 1]}</li>
-              </ul>
-            </ul>
-			  	<option value={iGoals.desc[2]}>{iGoals.desc[2]}</option>
-			  	  <ul>
-              <li>{iGoals.type[2]}</li>
-              <ul>
-                <li>{iGoals.needs[2, 0]}</li>
-                <li>{iGoals.needs[2, 1]}</li>
-              </ul>
-            </ul>
-			  </select>	
+				<CardStack
+					height={300}
+					width={412}
+					background='#f8f8f8'
+					hoverOffset={25}>
+
+					<Card background='#30b8f2'>
+						<h1>{iGoals[0].desc}</h1>
+						<ul>
+			  	    		<li>{iGoals[0].type}</li>
+			  	    		<ul>
+			  	      			<li>{iGoals[0].needs[0]}</li>
+			  	      			<li>{iGoals[0].needs[1]}</li>
+			  	    		</ul>
+			  	  		</ul> 
+					</Card>
+
+					<Card background='#6ded75'>
+						<h1>{iGoals[1].desc}</h1>
+						<ul>
+			  	    		<li>{iGoals[1].type}</li>
+			  	    		<ul>
+			  	      			<li>{iGoals[1].needs[0]}</li>
+			  	      			<li>{iGoals[1].needs[1]}</li>
+			  	    		</ul>
+			  	  		</ul>
+			  	  	</Card>
+
+					<Card background='#7c9ed6'>
+						<h1>{iGoals[2].desc}</h1>
+						<ul>
+			  	    		<li>{iGoals[2].type}</li>
+			  	    		<ul>
+			  	      			<li>{iGoals[2].needs[0]}</li>
+			  	      			<li>{iGoals[2].needs[1]}</li>
+			  	    		</ul>
+			  	  		</ul> 					
+			  	  	</Card>
+
+				</CardStack>
+
 			</div>
 		)
 	}
