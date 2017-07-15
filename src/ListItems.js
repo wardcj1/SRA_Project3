@@ -13,12 +13,16 @@ const iTypes = [{
   }
 ];
 
-class ListItems extends React.Component {
+export class ListItems extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			investorType: ''
 		};
+	}
+
+	buildOptions() {
+		
 	}
 
 	render() {

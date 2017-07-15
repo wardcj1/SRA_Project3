@@ -6,8 +6,7 @@ module.exports = {
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    path: __dirname + "/public",
-    filename: "bundle.js"
+    filename: "public/bundle.js"
   },
 
   // This section desribes the transformations we will perform
@@ -19,7 +18,7 @@ module.exports = {
         // Webpack will only process files in our app folder. This avoids processing
         // node modules and server files unnecessarily
         include: /app/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         loader: "babel-loader",
         query: {
           // These are the specific transformations we'll be using.

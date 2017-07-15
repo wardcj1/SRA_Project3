@@ -1,9 +1,9 @@
 import React from "react";
 import { Panel, Button, Col } from "react-bootstrap";
-import ListItems from './grandchildren/ListItems.js';
-import GoalList from './grandchildren/GoalList.js';
+import {ListItems} from "./ListItems";
+import {GoalList} from "./GoalList";
 
-class Goals extends React.Component {
+export class Goals extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,6 +11,7 @@ class Goals extends React.Component {
       investorType: '',
       investorGoal: '',
     }
+    this.doCommit = this.doCommit.bind(this);
   }
 
   handleChange(event) {
@@ -49,7 +50,7 @@ class Goals extends React.Component {
             </Panel>
           </Col>  
 
-          <Button type="submit" className="btn btn-primary" onClick={doCommit()}>
+          <Button type="submit" className="btn btn-primary" onClick={this.doCommit()}>
               Submit
           </Button>
 

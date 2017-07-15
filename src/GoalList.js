@@ -16,7 +16,7 @@ const iGoals = [{
   }
 ];
 
-class GoalList extends React.Component {
+export class GoalList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
