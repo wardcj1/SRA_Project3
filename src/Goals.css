@@ -1,0 +1,10 @@
+.logo {
+	width: 400px;
+	height: 175px;
+}
+
+body {
+	background-image: url("./components/assets/images/shore.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 //import { Row, Jumbotron } from "react-bootstrap";
-import { Router, Route, browserHistory, IndexRoute } from "react-router";
+import { Router, Route, browserHistory } from "react-router";
 
 import {Home} from "./Home";
 import {Goals} from "./Goals";
-//import {Survey} from './components/Survey'
+import {Survey} from './Survey'
 
 import './App.css';
 
 // <Route path={"/picker"} component={Picker} />            
 // for stock picker path?
-// <Route path={"/survey"} component={Survey} /> 
 
 class App extends Component {
 
@@ -18,8 +17,8 @@ class App extends Component {
     return (
       <Router history={browserHistory}>
         <Route path={"/"} component={Home} />
-        <IndexRoute component={Home} />
         <Route path={"/goals"} component={Goals} />
+        <Route path={"/survey"} component={Survey} />
       </Router>
     );
   } 

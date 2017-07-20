@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import { CardStack, Card } from 'react-cardstack';
 
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
@@ -35,7 +35,7 @@ export class GoalList extends React.Component {
 					background='#f8f8f8'
 					hoverOffset={25}>
 
-					<Card background='#30b8f2'>
+					<Card background='#efe22d'>
 						<h1>{iGoals[0].desc}</h1>
 						<ul>
 			  	    		<li>{iGoals[0].type}</li>
@@ -46,7 +46,7 @@ export class GoalList extends React.Component {
 			  	  		</ul> 
 					</Card>
 
-					<Card background='#6ded75'>
+					<Card background='#f7b125'>
 						<h1>{iGoals[1].desc}</h1>
 						<ul>
 			  	    		<li>{iGoals[1].type}</li>
@@ -57,7 +57,7 @@ export class GoalList extends React.Component {
 			  	  		</ul>
 			  	  	</Card>
 
-					<Card background='#7c9ed6'>
+					<Card background='#f25226'>
 						<h1>{iGoals[2].desc}</h1>
 						<ul>
 			  	    		<li>{iGoals[2].type}</li>

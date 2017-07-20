@@ -1,91 +1,114 @@
 import React, {Component} from "react";
+import update from 'react-addons-update';
+
+import Question from './components/Question';
+import quizQuestions from './components/quizQuestions';
+import Quiz from './components/Quiz';
+import Result from './components/Result';
+import './Survey.css';
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
 
-// There must the same number of elements in both the answers and weights arrays.
-const Survey = [{
-  question: 'Which best describes your investment objective?',
-  answers: ['Current income is my primary objective with capital appreciation being secondary.',
-  	'Capital appreciation is my primary objective with current income being secondary.',
-  	'Capital appreciation is my only objective.'],
-  weights: [6, 8, 10] 
-  }, {
-  question: 'How important is it for your portfolio to generate current income?',
-  answers: ['Very important - I will use current income from the portfolio to meet current expenses.',
-  	'Somewhat important - Distributions from this portfolio will help in meeting current expenses.',
-  	'Not important.  Current income is not a consideration.'],
-  weights: [3, 5, 7] 
-  }, {
-  question: 'When is the earliest that you anticipate needing all or a substantial portion of your investable assets?',
-  answers: ['0-5 years',
-  	'6-10 years',
-  	'11-15 years',
-  	'Over 15 years'],
-  weights: [0, 6, 9, 12] 
-  }, {
-  question: 'What is your age range?',
-  answers: ['Over 75',
-  	'65-74',
-  	'55-64',
-  	'40-54',
-  	'Under 40'],
-  weights: [-5, -2, 2, 6, 9] 
-  }, {
-  question: 'How willing are you to accept fluctuations in the value of your portfolio?',
-  answers: ['Fluctuation in principal is a key concern.',
-  	'Fluctuation in principal is a moderate concern.',
-  	'Fluctuation in principal is a minor concern.',
-  	'Fluctuation in principal is of no concern.'],
-  weights: [-2, 0, 1, 2] 
-  }, {
-  question: 'How important is it to you to be able to liquidate part or all of your portfolio with little loss of your investments?',
-  answers: ['Very important.',
-  	'Moderately important.',
-  	'Not important.'],
-  weights: [-2, 1, 2] 
-  }, {
-  question: 'Short-term volatility in financial markets may cause portfolios to decline in value.  How willing are you to accept short-term losses?',
-  answers: ['I am unwilling to accept more than a small, temporary loss in portfolio value.',
-  	'I am willing to accept short-term losses, but not as much as the loss in the broad equity market.',
-  	'I am willing to accept short-term losses in line with the broad equity market.',
-  	'I am willing to accept higher than market short-term losses as part of a strategy to achieve higher than long-term market returns.'],
-  weights: [-3, 0, 4, 7] 
-  }
-];
-
-class Survey extends React.Component {
+export class Survey extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			answers: []
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      answersCount: 0,
+      answerWeight: 0,
+      result: ''
 		};
+    this.handleAnswerSelected=this.handleAnswerSelected.bind(this);
 	}
 
-	createSurvey() {
-    
-		return(
-      console.log("in createSurvey")
-		)
-	}
+  componentWillMount() {
+    //const shuffledAnswerOptions = quizQuestions.map(question);
 
+    this.setState({
+      question: quizQuestions[0].question,
+      answerOptions: quizQuestions[0].question.answers
+    });
+  }
+
+  setUserAnswer(answer) {
+    const updatedAnswersCount = update(this.state.answersCount, {
+      [answer]: {$apply: (currentValue) => currentValue + 1}
+    });
+    this.setState({
+      answersCount: updatedAnswersCount,
+      answer: answer 
+    });
+  }
+
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
+    });
+  }
+
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+      setTimeout(() => this.setNextQuestion(), 300);
+    } else {
+      setTimeout(() => this.setResults(this.getResults()), 300);
+    };
+  }
+
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+
+    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+  }
+
+  setResults(result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else {
+      this.setState({ result: 'Undetermined' });
+    }
+  }
+
+  renderQuiz() {
+    return (
+      <Quiz
+        answer={this.state.answer}
+        answerOptions={this.state.answerOptions}
+        questionId={this.state.questionId}
+        question={this.state.question}
+        questionTotal={quizQuestions.length}
+        onAnswerSelected={this.handleAnswerSelected}
+      />  
+    );
+  }
+
+  renderResult() {
+    return (
+      <Result quizResult={this.state.result} />
+    );
+  }
 
 	render() {
 		return(
 			<div>
-			<this.createSurvey() />
-			
-			  <select name={this.state.investorType}>
-			  	<option value=iTypes.desc[0]>{iTypes.desc[0]}</option>
-			  	  <p>{iTypes.summary[0]}</p>
-				  <option value=iTypes.desc[1]>{iTypes.desc[1]}</option>
-				    <p>{iTypes.summary[1]}</p>
-			  	<option value=iTypes.desc[2]>{iTypes.desc[2]}</option>
-			  	  <p>{iTypes.summary[2]}</p>
-			  </select>	
-			</div>
+        {this.state.result ? this.renderResult() : this.renderQuiz()}
+      </div>  
 		)
 	}
 }
 
 // Export the component back for use in other files
-export default ListItems;
+export default Survey;

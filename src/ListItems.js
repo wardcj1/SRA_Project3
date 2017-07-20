@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import { CardStack, Card } from 'react-cardstack';
 
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
@@ -60,11 +60,3 @@ export class ListItems extends React.Component {
 // Export the component back for use in other files
 export default ListItems;
 
-//			  <select name={this.state.investorType}>
-//			  	<option value={iTypes[0].desc}>{iTypes[0].desc}</option>
-//			  	<p>{iTypes[0].summary}</p>
-//				<option value={iTypes[1].desc}>{iTypes[1].desc}</option>
-//				<p>{iTypes[1].summary}</p>
-//			  	<option value={iTypes[2].desc}>{iTypes[2].desc}</option>
-//			  	<p>{iTypes[2].summary}</p>
-//			  </select>	
