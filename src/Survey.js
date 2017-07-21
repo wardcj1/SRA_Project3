@@ -1,11 +1,13 @@
-import React, {Component} from "react";
-import update from 'react-addons-update';
+import React from "react";
+import { browserHistory } from "react-router";
 
-import Question from './components/Question';
+// import update from 'react-addons-update';
+
+//import Question from './components/Question';
 import quizQuestions from './components/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
-import './Survey.css';
+//import './Survey.css';
 //import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
 
 export class Survey extends React.Component {
@@ -26,20 +28,36 @@ export class Survey extends React.Component {
 	}
 
   componentWillMount() {
-    //const shuffledAnswerOptions = quizQuestions.map(question);
+    const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
 
     this.setState({
       question: quizQuestions[0].question,
-      answerOptions: quizQuestions[0].question.answers
+      answerOptions: shuffledAnswerOptions[0]
     });
   }
 
+  shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
+
   setUserAnswer(answer) {
-    const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue + 1}
-    });
     this.setState({
-      answersCount: updatedAnswersCount,
+      answersCount: this.state.answersCount + parseInt(answer, 10),
       answer: answer 
     });
   }
@@ -75,11 +93,8 @@ export class Survey extends React.Component {
   }
 
   setResults(result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
+    // when survey ends...
+      browserHistory.push("/");
   }
 
   renderQuiz() {

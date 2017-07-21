@@ -31,7 +31,7 @@ export class GoalList extends React.Component {
 			<div>
 				<CardStack
 					height={300}
-					width={412}
+					width={500}
 					background='#f8f8f8'
 					hoverOffset={25}>
 

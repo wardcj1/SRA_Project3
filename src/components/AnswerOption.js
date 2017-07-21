@@ -22,10 +22,10 @@ function AnswerOption(props) {
 }
 
 AnswerOption.propTypes = {
-  answerWeight: React.PropTypes.number.isRequired,
-  answerContent: React.PropTypes.string.isRequired,
-  answer: React.PropTypes.string.isRequired,
-  onAnswerSelected: React.PropTypes.string.isRequired
+  answerWeight: PropTypes.number.isRequired,
+  answerContent: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+  onAnswerSelected: PropTypes.func.isRequired
 };
 
 export default AnswerOption;

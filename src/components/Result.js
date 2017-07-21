@@ -1,16 +1,27 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
 
 function Result(props) {
   return (
-  	<div className="result">
-  	  You chose <strong>{props.quizResult}</strong>
-  	</div>
+  	<ReactCSSTransitionGroup
+  	  className="container result"
+  	  component="div"
+  	  transitionName="fade"
+  	  transitionEnterTimeout={800}
+  	  transitionLeaveTimeout={500}
+  	  transitionAppear
+  	  transitionAppearTimeout={500}
+  	>
+  		<div className="result">
+  	  		You chose <strong>{props.quizResult}</strong>
+  		</div>
+  	</ReactCSSTransitionGroup>
   );
 }
 
 Result.propTypes = {
-  quizResult: React.PropTypes.string.isRequired
+  quizResult: PropTypes.string.isRequired
 };
 
 export default Result;

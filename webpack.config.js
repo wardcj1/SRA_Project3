@@ -25,6 +25,12 @@ module.exports = {
           presets: ["react", "es2015"]
         }
       }
+    ],
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      }
     ]
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
