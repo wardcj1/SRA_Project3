@@ -11,9 +11,6 @@ import maLogo from "./components/assets/images/market-watch-logo.jpg";
 import bLogo from "./components/assets/images/Bloomberg.png";
 import aLogo from "./components/assets/images/Alpha.png";
 
-// import css styles
-//import './Home.css';
-
 export class Home extends React.Component {
 
   constructor(props) {
@@ -40,7 +37,7 @@ export class Home extends React.Component {
           </Row>
           <Row>
           <Col xs={6} xsOffset={3} sm={6} smOffset={3} md={6} mdOffset={3}>
-            <h3>Press Start to begin entering some information that will help us choose a portfolio.</h3>
+            <h2>Press Start to begin entering some information that will help us choose a portfolio.  Or click on one of these links for current information.</h2>
           </Col>
           </Row>
         </div>

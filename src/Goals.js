@@ -20,7 +20,7 @@ export class Goals extends React.Component {
       investorType: '',
       investorGoal: '',
     }
-    //this.doCommit = this.doCommit.bind(this);
+    this.doCommit = this.doCommit.bind(this);
     console.log("hitting goals component");
   }
 

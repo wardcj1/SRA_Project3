@@ -1,14 +1,9 @@
 import React from "react";
 import { browserHistory } from "react-router";
 
-// import update from 'react-addons-update';
-
-//import Question from './components/Question';
 import quizQuestions from './components/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
-//import './Survey.css';
-//import { Button, Panel, ButtonGroup, Col } from "react-bootstrap";
 
 export class Survey extends React.Component {
 

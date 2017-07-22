@@ -4,13 +4,13 @@ const quizQuestions = [
     answers: [
       {
         weight: 6,
-        content: '-- Current income is my primary objective with capital appreciation being secondary.'
+        content: 'Current income is my primary objective with capital appreciation being secondary.'
       }, {
         weight: 8,
-        content: '-- Capital appreciation is my primary objective with current income being secondary.'
+        content: 'Capital appreciation is my primary objective with current income being secondary.'
       }, {
         weight: 10,
-        content: '-- Capital appreciation is my only objective.'
+        content: 'Capital appreciation is my only objective.'
       }  
     ],
   }, {
