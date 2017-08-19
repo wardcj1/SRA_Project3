@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Smart Robo Investments</title>
+      <!-- Latest compiled and minified CSS -->
+<!--       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"> -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+
+
+    <div id="wrapper">
+      <form class="form-inline" id="userinput">
+          <label class="header">Smart Robo Investments</label>
+          <input type="text" id="company" placeholder="Company" style="width: 300px">
+          <input type="text" id="ticker" placeholder="Symbol" style="width: 100px" maxlength="5" size="5">
+          <button type="submit" id="addstock" class="search-btn">Search</button>
+      </form>
+    </div>
+
+    
+      <div class="results">
+        <table id="portfolio">
+        </table>
+      </div>
+      
+      <div class="results">
+        <table id="watchlist">
+        </table>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
